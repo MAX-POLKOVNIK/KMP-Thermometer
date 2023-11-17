@@ -18,3 +18,4 @@ rootProject.name = "KMP-Thermometer"
 include(":androidapp")
 include(":shared")
 include(":mvvm")
+include(":components")

@@ -25,13 +25,17 @@ kotlin {
         podfile = project.file("../iosapp/Podfile")
         framework {
             baseName = "shared"
-            isStatic = true
+            isStatic = false
+            export(projects.mvvm)
+            export(projects.components)
+            transitiveExport = true
         }
     }
     
     sourceSets {
         commonMain.dependencies {
             api(projects.mvvm)
+            api(projects.components)
             implementation(libs.coroutines.core)
         }
         commonTest.dependencies {

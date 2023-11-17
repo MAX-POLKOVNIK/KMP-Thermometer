@@ -4,3 +4,7 @@ expect abstract class BaseViewModel<State : ViewModelState, SideEffect : ViewMod
     abstract val state: ViewModelStateFlow<State>
     abstract val sideEffect: ViewModelSideEffectFlow<SideEffect>
 }
+
+class BaseViewModel2() {
+
+}
