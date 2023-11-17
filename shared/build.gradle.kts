@@ -28,6 +28,7 @@ kotlin {
             isStatic = false
             export(projects.mvvm)
             export(projects.components)
+            export(projects.featureSearch)
             transitiveExport = true
         }
     }
@@ -36,6 +37,7 @@ kotlin {
         commonMain.dependencies {
             api(projects.mvvm)
             api(projects.components)
+            api(projects.featureSearch)
             implementation(libs.coroutines.core)
         }
         commonTest.dependencies {

@@ -6,6 +6,7 @@ data class Color(val hex: String) {
         val Gray75 = Color("#757575")
         val Transparent = Color("#00000000")
         val White = Color("#FFFFFF")
+        val Black = Color("#000000")
 
         val Primary = TwilightBlue
     }
