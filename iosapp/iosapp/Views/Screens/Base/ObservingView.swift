@@ -11,17 +11,19 @@ import shared
 import Combine
 import SwiftUI
 
-public struct ObservingView<State : ViewModelState, StateView>: View where StateView: View {
+public struct FlowView<State : ViewModelState, StateView>: View where StateView: View {
 
     @ObservedObject private var observableState: ObservableViewModelState<State>
 
     private let viewProducer: (State) -> StateView
 
     public init(
-        publisher: AnyPublisher<State, Never>,
+        of flow: ViewModelStateFlow<State>,
         @ViewBuilder viewProducer: @escaping (State) -> StateView
     ) {
-        self.observableState = ObservableViewModelState(publisher: publisher)
+        self.observableState = 
+            ObservableViewModelState(publisher: FlowPublisher(flow))
+        
         self.viewProducer = viewProducer
     }
 

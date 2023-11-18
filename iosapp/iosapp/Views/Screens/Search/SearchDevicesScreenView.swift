@@ -12,25 +12,16 @@ import shared
 struct SearchDevicesScreenView: View {
     private let viewModel: SearchDevicesViewModel
     
-    @ObservedObject var state: ObservableViewModelState<SearchDeviceViewModelState>
-    
     init(viewModel: SearchDevicesViewModel) {
         self.viewModel = viewModel
-        state = ObservableViewModelState(
-            publisher: FlowPublisher(viewModel.state)
-        )
     }
     
     var body: some View {
-        ObservingView(
-            publisher: FlowPublisher(viewModel.state)
-        ) { state in
+        FlowView(of: viewModel.state) { state in
             SearchDevicesStateView(state)
         }
     }
 }
-
-
 
 struct SearchDevicesStateView: View {
     private let state: SearchDeviceViewModelState
@@ -58,6 +49,7 @@ struct SearchDevicesStateView: View {
                     .padding()
                 if state.isSearchingIndicatorVisible {
                     ProgressView()
+                        .padding()
                 }
             
                 Spacer()
