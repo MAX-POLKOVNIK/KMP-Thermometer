@@ -12,7 +12,7 @@ import shared
 struct SearchDevicesScreenView: View {
     private let viewModel: SearchDevicesViewModel
     
-    init(viewModel: SearchDevicesViewModel) {
+    init(viewModel: SearchDevicesViewModel = SearchDevicesViewModel()) {
         self.viewModel = viewModel
     }
     
