@@ -41,13 +41,13 @@ class SearchDevicesViewModel : BaseViewModel<SearchDeviceViewModelState, SearchD
                 state.value.copy(
                     isSearchingIndicatorVisible = false,
                     searchButton = ButtonState
-                        .Blue("STOP SCANNING", ::onSearchButtonClicked)
+                        .Blue("START SEARCHING", ::onSearchButtonClicked)
                 )
             } else {
                 state.value.copy(
                     isSearchingIndicatorVisible = true,
                     searchButton = ButtonState
-                        .Blue("SEARCH DEVICES", ::onSearchButtonClicked)
+                        .BlueOutline("STOP SEARCHING", ::onSearchButtonClicked)
                 )
             }
     }

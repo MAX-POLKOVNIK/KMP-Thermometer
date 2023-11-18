@@ -8,6 +8,7 @@ import androidx.compose.material3.*
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
+import polkovnik.max.feature_search.SearchDevicesScreenView
 import polkovnik.max.kmp_thermometer.Greeting
 
 class MainActivity : ComponentActivity() {
@@ -19,22 +20,17 @@ class MainActivity : ComponentActivity() {
                     modifier = Modifier.fillMaxSize(),
                     color = MaterialTheme.colorScheme.background
                 ) {
-                    GreetingView(Greeting().greet())
+                    SearchDevicesScreenView()
                 }
             }
         }
     }
 }
 
-@Composable
-fun GreetingView(text: String) {
-    Text(text = text)
-}
-
-@Preview
-@Composable
-fun DefaultPreview() {
-    MyApplicationTheme {
-        GreetingView("Hello, Android!")
-    }
-}
+//@Preview
+//@Composable
+//fun DefaultPreview() {
+//    MyApplicationTheme {
+//        GreetingView("Hello, Android!")
+//    }
+//}

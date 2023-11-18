@@ -31,6 +31,11 @@ kotlin {
         commonTest.dependencies {
             implementation(libs.kotlin.test)
         }
+        androidMain.dependencies {
+            implementation(libs.compose.ui)
+            implementation(libs.compose.ui.tooling.preview)
+            implementation(libs.compose.material3)
+        }
     }
 }
 
@@ -39,5 +44,17 @@ android {
     compileSdk = 34
     defaultConfig {
         minSdk = 24
+    }
+
+    composeOptions {
+        kotlinCompilerExtensionVersion = libs.versions.compose.compiler.get()
+    }
+
+    buildFeatures {
+        compose = true
+    }
+
+    dependencies {
+        debugImplementation(libs.compose.ui.tooling)
     }
 }
