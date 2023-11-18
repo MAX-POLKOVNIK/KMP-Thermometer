@@ -17,6 +17,7 @@ import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.collectAsState
 import androidx.compose.runtime.getValue
+import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.ColorFilter
 import androidx.compose.ui.res.painterResource
@@ -66,7 +67,9 @@ fun SearchDevicesScreenStateView(
             )
         }
 
-        Row {
+        Row(
+            verticalAlignment = Alignment.CenterVertically
+        ) {
             Text(
                 text = state.toolbarTitle,
                 fontSize = 18.sp,
@@ -76,7 +79,7 @@ fun SearchDevicesScreenStateView(
             if (state.isSearchingIndicatorVisible) {
                 CircularProgressIndicator(
                     modifier = Modifier
-                        .width(64.dp)
+                        .size(48.dp)
                         .padding(16.dp),
                     color = Color.Primary.toComposeColor(),
                     trackColor = Color.White.toComposeColor(),
