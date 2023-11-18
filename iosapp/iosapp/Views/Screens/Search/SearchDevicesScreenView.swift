@@ -49,7 +49,7 @@ struct SearchDevicesStateView: View {
                     .padding()
                 if state.isSearchingIndicatorVisible {
                     ProgressView()
-                        .padding()
+                        .padding(.vertical)
                 }
             
                 Spacer()

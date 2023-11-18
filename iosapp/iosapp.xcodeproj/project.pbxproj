@@ -15,7 +15,7 @@
 		4261AFDF2B07D16E00E20767 /* SearchDevicesScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4261AFDE2B07D16E00E20767 /* SearchDevicesScreenView.swift */; };
 		4261AFE12B07E3E600E20767 /* SearchDeviceListItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4261AFE02B07E3E600E20767 /* SearchDeviceListItemView.swift */; };
 		4261AFE52B07EF1400E20767 /* ObservableViewModelState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4261AFE42B07EF1400E20767 /* ObservableViewModelState.swift */; };
-		4261AFE72B07EF8100E20767 /* ObservingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4261AFE62B07EF8100E20767 /* ObservingView.swift */; };
+		4261AFE72B07EF8100E20767 /* FlowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4261AFE62B07EF8100E20767 /* FlowView.swift */; };
 		7555FF83242A565900829871 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7555FF82242A565900829871 /* ContentView.swift */; };
 		841E2AEFCB08506ADC5469E6 /* Pods_iosapp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 233D5109B169F3EE823F9A5A /* Pods_iosapp.framework */; };
 /* End PBXBuildFile section */
@@ -31,7 +31,7 @@
 		4261AFDE2B07D16E00E20767 /* SearchDevicesScreenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchDevicesScreenView.swift; sourceTree = "<group>"; };
 		4261AFE02B07E3E600E20767 /* SearchDeviceListItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchDeviceListItemView.swift; sourceTree = "<group>"; };
 		4261AFE42B07EF1400E20767 /* ObservableViewModelState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ObservableViewModelState.swift; sourceTree = "<group>"; };
-		4261AFE62B07EF8100E20767 /* ObservingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ObservingView.swift; sourceTree = "<group>"; };
+		4261AFE62B07EF8100E20767 /* FlowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlowView.swift; sourceTree = "<group>"; };
 		747CA4F811CC2E06B5C698D6 /* Pods-iosapp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iosapp.debug.xcconfig"; path = "Target Support Files/Pods-iosapp/Pods-iosapp.debug.xcconfig"; sourceTree = "<group>"; };
 		7555FF7B242A565900829871 /* iosapp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iosapp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7555FF82242A565900829871 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -91,7 +91,7 @@
 			children = (
 				4261AFD82B07A4AE00E20767 /* FlowPublisher.swift */,
 				4261AFE42B07EF1400E20767 /* ObservableViewModelState.swift */,
-				4261AFE62B07EF8100E20767 /* ObservingView.swift */,
+				4261AFE62B07EF8100E20767 /* FlowView.swift */,
 			);
 			path = Base;
 			sourceTree = "<group>";
@@ -271,7 +271,7 @@
 				2152FB042600AC8F00CF470E /* iOSApp.swift in Sources */,
 				4261AFDF2B07D16E00E20767 /* SearchDevicesScreenView.swift in Sources */,
 				4261AFE52B07EF1400E20767 /* ObservableViewModelState.swift in Sources */,
-				4261AFE72B07EF8100E20767 /* ObservingView.swift in Sources */,
+				4261AFE72B07EF8100E20767 /* FlowView.swift in Sources */,
 				4261AFE12B07E3E600E20767 /* SearchDeviceListItemView.swift in Sources */,
 				7555FF83242A565900829871 /* ContentView.swift in Sources */,
 				4261AFDC2B07B2BE00E20767 /* ButtonView.swift in Sources */,
