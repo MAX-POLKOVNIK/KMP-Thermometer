@@ -17,17 +17,26 @@ struct SearchDevicesScreenView: View {
     }
     
     var body: some View {
-        FlowView(of: viewModel.state) { state in
-            SearchDevicesStateView(state)
+        FlowView(of: viewModel.state, and: viewModel.sideEffect) {
+            SearchDevicesStateView($0, $1)
         }
     }
 }
 
 struct SearchDevicesStateView: View {
     private let state: SearchDeviceViewModelState
+    private let sideEffect: SearchDevicesViewModelSideEffect?
     
-    init(_ state: SearchDeviceViewModelState) {
+    @State private var toast: Toast?
+    
+    init(
+        _ state: SearchDeviceViewModelState,
+        _ sideEffect: SearchDevicesViewModelSideEffect?
+    ) {
         self.state = state
+        self.sideEffect = sideEffect
+        print((sideEffect as? SearchDevicesViewModelSideEffectToast)?.toast)
+        self.toast = (sideEffect as? SearchDevicesViewModelSideEffectToast)?.toast
     }
     
     var body: some View {
@@ -73,11 +82,13 @@ struct SearchDevicesStateView: View {
             ButtonView(state.searchButton)
                 .padding()
         }
+        .toastView(toast: $toast)
     }
 }
 
 #Preview {
     SearchDevicesStateView(
-        SearchDeviceViewModelState.companion.Preview
+        SearchDeviceViewModelState.companion.Preview,
+        nil
     )
 }

@@ -69,3 +69,19 @@ func FlowPublisher<T>(_ flow: ViewModelStateFlow<T>) -> AnyPublisher<T, Never> {
         )
     }.eraseToAnyPublisher()
 }
+
+func FlowPublisher<T>(_ flow: ViewModelSideEffectFlow<T>) -> AnyPublisher<T, Never> {
+    return Deferred<Publishers.HandleEvents<PassthroughSubject<T, Never>>> {
+        let subject = PassthroughSubject<T, Never>()
+        
+        let closable = flow.watch { next in
+            subject.send(next)
+        }
+        
+        return subject.handleEvents(
+            receiveCancel: {
+                closable.close()
+            }
+        )
+    }.eraseToAnyPublisher()
+}
